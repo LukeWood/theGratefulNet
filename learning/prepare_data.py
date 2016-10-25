@@ -33,6 +33,6 @@ class data_manager:
         return self.parsed_sentences
 
     def get_training_data(self):
-        X = np.asarray([[word_to_index[w] for w in sent[:-1] for sent in self.parsed_sentences]])
-        Y = np.asarray([[word_to_index[w] for w in sent[1:] for sent in self.parsed_sentences]])
+        X = np.asarray([[word_to_index[w] for w in sent[:-1]] for sent in self.parsed_sentences])
+        Y = np.asarray([[word_to_index[w] for w in sent[1:]] for sent in self.parsed_sentences])
         return X, Y
