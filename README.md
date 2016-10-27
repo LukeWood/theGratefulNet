@@ -1,4 +1,5 @@
-<img src="mascot1.jpg" alt="mascot" height=50/> <h1>**the Grateful Net**</h1> <img src="mascot2.jpg" alt="mascot" height=50/>
+<img src="D_Skeletons_color.jpg" alt="mascot" width=100%/>
+# the Grateful Net
 This is a recurrent neural network program that is trained on the music of the band Grateful Dead.  This provides us with the abiltiy to produce text that is similar to the original.
 
 # Notation
