@@ -24,12 +24,17 @@ class RNN:
         s = np.zeros((steps_total+1,self.hidden_dim))
         s[-1] = np.zeros(self.hidden_dim))
 
-        for i in np.arange(steps_total):
-            
+        o = np.zeros(T, self.hidden_dim)
 
+        for i in np.arange(steps_total):
+            #Numpy .dot is actually matrix multiplication not dot product.
+            s[t] = np.tanh(self.U[:,x[t]]+ self.W.dot(s[t-1]))
+            o[t] = softmax(self.V.dot(s[t]))
+
+        return [o, s]
 
     #I'm defining this instead of using numpy's implementation so that we can try different nonlinear functions more easily.
     def nonlin(x):
         #tanh(x) = (e^x - e^-x)/(e^x +e^-x)
         #np.exp = e^x
-        return (exp(x) - exp(-x))/(np.exp(x) + np.exp(-x))
+        return (exp(x) - exp(-x))./(np.exp(x) + np.exp(-x))
