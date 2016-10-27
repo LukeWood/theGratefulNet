@@ -24,12 +24,24 @@ class RNN:
         s = np.zeros((steps_total+1,self.hidden_dim))
         s[-1] = np.zeros(self.hidden_dim)
 
-        o = np.zeros(T, self.hidden_dim)
+        o = np.zeros((steps_total, self.hidden_dim))
 
         for i in np.arange(steps_total):
             #Numpy .dot is actually matrix multiplication not dot product.
-            s[t] = np.tanh(self.U[:,x[t]]+ self.W.dot(s[t-1]))
-            o[t] = softmax(self.V.dot(s[t]))
+
+            #v1 = 100x1
+            v1 = s[i-1]
+
+            #self.W = 100x100
+
+            v2 = self.W.dot(v1)
+            #v2 = 100x1
+
+            v3 = self.U[:,x[i]]
+            #v3 = 100x7
+
+            s[i] = np.tanh(v3 + v2)
+            o[i] = softmax(self.V.dot(s[i]))
 
         return [o, s]
 
