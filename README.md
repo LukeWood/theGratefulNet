@@ -1,7 +1,7 @@
 <img src="img/D_Skeletons_color.jpg" alt="mascot" width=100%/>
 <h1 align="center">The Grateful Net</h1>
 
-<p align="center"><img src="img/mascot1.jpg" alt="mascot" height=50/><h2>A tribute to the Grateful Dead.</h2><img src="img/mascot1.jpg" alt="mascot" height=50/></p>
+<p align="center"><img src="img/mascot1.jpg" alt="mascot" height=50/><h2 display="inline">A tribute to the Grateful Dead.</h2><img src="img/mascot1.jpg" alt="mascot" height=50/></p>
 
 # Concept
 
