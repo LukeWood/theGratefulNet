@@ -10,3 +10,19 @@ o<sub>t</sub> is the output at step t.
 
 # Initial Thoughts and Predictions
 My first guess is that the network will naturally tend to separate these two authors as their language diction is incredibly different.  If we input a word more related to Doctor Seuss than NWA I hypothesize that the network will drive itself towards an output of almost entire in Doctor Seuss' diction.
+
+# Literature
+To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
+**Numpy**
+[Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+[Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)
+</br>
+**Equations**
+tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
+**Algorithms**
+[Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
+[Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
+</br>
+**Neural Networks**
+[Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)
+[Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)
