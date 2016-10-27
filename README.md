@@ -1,9 +1,9 @@
 <img src="D_Skeletons_color.jpg" alt="mascot" width=100%/>
 # The Grateful Net
 
-<img src="mascot1.jpg" alt="mascot" height=50/>This is a recurrent neural network program that is trained on the music of the band Grateful Dead.<img src="mascot1.jpg" alt="mascot" height=50/>
+<img src="mascot1.jpg" alt="mascot" height=50/>A tribute to the Grateful Dead.<img src="mascot1.jpg" alt="mascot" height=50/>
 
-## Concept
+# Concept
 
 Recurrent Neural Networks are a class of machine learning models.  They are similar to a classic neural network, however they "remember" their previous states.  This is very useful when dealing with sequences, including but not limited to natural language.  We will be training out network model on music lyrics, and hopefully we will get some interesting music lyrics out.
 
