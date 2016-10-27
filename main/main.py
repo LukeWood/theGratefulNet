@@ -11,4 +11,6 @@ for i in glob("../data/*"):
 
 model = RNN(word_dim = vocab_size)
 
-o, s = model.forward_propogation(dm.get_training_data()[0])
+X_Train, Y_Train = dm.get_training_data()
+
+o, s = model.forward_propogation(X_Train[10])
