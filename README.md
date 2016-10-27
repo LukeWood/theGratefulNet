@@ -42,6 +42,7 @@ To start this project, I have gone through some literature that I found essentia
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
  > Coming soon!
+ 
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
  [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)</br>
