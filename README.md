@@ -35,8 +35,17 @@ To start this project, I have gone through some literature that I found essentia
  > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
 
  [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
- > Coming soon.
+ > Coming soon!
 
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
  [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)</br>
+
+# Implementation Steps
+Coming soon!
+
+# Results
+Coming soon!
+
+# Live demo
+Coming soon!
