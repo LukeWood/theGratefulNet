@@ -3,8 +3,8 @@ import itertools
 import numpy as np
 
 class data_manager:
-    def __init__(self):
-        self.vocabulary_size = 8000
+    def __init__(self,vocab_size=8000):
+        self.vocabulary_size = vocab_size
         self.unknown_token = "UNKNOWN_TOKEN"
         self.sentence_start_token = "SENTENCE_START"
         self.sentence_end_token = "SENTENCE_END"
@@ -33,6 +33,7 @@ class data_manager:
         return self.parsed_sentences
 
     def get_training_data(self):
+        print(len(self.word_to_index))
         X = np.asarray([[self.word_to_index[w] for w in sent[:-1]] for sent in self.parsed_sentences])
         Y = np.asarray([[self.word_to_index[w] for w in sent[1:]] for sent in self.parsed_sentences])
         return X, Y
