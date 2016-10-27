@@ -19,6 +19,10 @@ My first guess is that the network will naturally tend to separate these two aut
 
 # Literature
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
+
+## Basic Definitions
+[**One-hot Vector**](https://en.wikipedia.org/wiki/One-hot) refers to a group of bits among which the legal combinations of values are only those with a single high</br>
+
 ## Numpy
  [Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
  > Numpy is an expansive mathematics library for python.  I will be making great use the linear algebra functionality.
@@ -42,7 +46,7 @@ To start this project, I have gone through some literature that I found essentia
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
  > Coming soon!
- 
+
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
  [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)</br>
