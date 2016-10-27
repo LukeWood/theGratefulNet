@@ -1,5 +1,5 @@
 # Grateful Net
-![alt tag](mascot1.jpg)This is a recurrent neural network program that is trained on a combination of Doctor Seuss and the rap group NWA.  The output should be quite comical.![alt tag](mascot2.jpg)
+![alt tag](mascot1.jpg =50x)This is a recurrent neural network program that is trained on a combination of Doctor Seuss and the rap group NWA.  The output should be quite comical.![alt tag](mascot2.jpg =50x)
 
 # Notation
 Inside of my neural network implementation you will find symbols that follow this notation.  If you are following along this is their meaning.  This is standard notation</br>
