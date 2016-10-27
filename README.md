@@ -1,7 +1,9 @@
 <img src="D_Skeletons_color.jpg" alt="mascot" width=100%/>
 # the Grateful Net
 
-![](mascot1.jpg)This is a recurrent neural network program that is trained on the music of the band Grateful Dead.  This provides us with the ability to produce text that is similar to the original.
+<img src="mascot1.jpg" alt="mascot" height=50/>
+This is a recurrent neural network program that is trained on the music of the band Grateful Dead.  This provides us with the ability to produce text that is similar to the original.<img src="mascot1.jpg" alt="mascot" height=50/>
+
 
 # Notation
 Inside of my neural network implementation you will find symbols that follow this notation.  If you are following along this is their meaning.  This is standard notation</br>
