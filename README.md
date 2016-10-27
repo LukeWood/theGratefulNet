@@ -13,16 +13,16 @@ My first guess is that the network will naturally tend to separate these two aut
 
 # Literature
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
-**Numpy**
-[Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
-[Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)
+**Numpy**</br>
+* [Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+* [Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)
 </br>
-**Equations**
-tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
-**Algorithms**
-[Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
-[Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
+**Equations**</br>
+* tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
+**Algorithms**</br>
+* [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
+* [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
 </br>
-**Neural Networks**
-[Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)
-[Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)
+**Neural Networks**</br>
+* [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)
+* [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)
