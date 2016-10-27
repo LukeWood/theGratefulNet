@@ -7,6 +7,7 @@ for fname in glob.glob("songs/*"):
         fname = fname.replace("songs/","")
         with open("../data/"+fname,"w") as fo:
             for line in f:
+                line = line.strip()
                 cont = False
                 for term in term_tokens:
                     if(line.startswith(term)):
@@ -15,4 +16,4 @@ for fname in glob.glob("songs/*"):
                         cont = True
                 if cont:
                     continue
-                fo.write(line)
+                fo.write(line+'\n')
