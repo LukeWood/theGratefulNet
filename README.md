@@ -19,6 +19,7 @@ __Numpy__:</br>
 </br>
 __Equations__:</br>
 * tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
+</br>
 __Algorithms__:</br>
 * [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
 * [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
