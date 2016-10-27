@@ -21,7 +21,10 @@ My first guess is that the network will naturally tend to separate these two aut
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
 __Numpy__</br>
  [Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)</br>
+ > Numpy is an expansive mathematics library for python.  I will be making great use the linear algebra functionality.
+
  [Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)</br>
+ > Having a strong foundation in numpy is essential in modeling networks in python.
 
 __Equations__</br>
  tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)</br>
