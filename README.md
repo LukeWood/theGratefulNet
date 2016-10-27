@@ -31,6 +31,9 @@ To start this project, I have gone through some literature that I found essentia
  >tanh is our nonlinear function that we will use to determine our state at each step.
 
 ## Algorithms
+ [Loss Function](https://en.wikipedia.org/wiki/Loss_function)
+ > Also known as a cost function, this function maps a set of values to the "cost" of running them.  This allows us to optimize our neural network based on the values at each step.
+
  [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
  > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
 
