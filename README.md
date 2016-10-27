@@ -21,20 +21,21 @@ My first guess is that the network will naturally tend to separate these two aut
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
 ## Numpy
  [Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
- >> Numpy is an expansive mathematics library for python.  I will be making great use the linear algebra functionality.
+ > Numpy is an expansive mathematics library for python.  I will be making great use the linear algebra functionality.
 
  [Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)
- >> Having a strong foundation in numpy is essential in modeling networks in python.
+ > Having a strong foundation in numpy is essential in modeling networks in python.
 
 ## Equations
  tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
  >tanh is our nonlinear function that we will use to determine our state at each step.
 
-</br>
-
 ## Algorithms
- [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)</br>
- [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)</br>
+ [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
+ > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
+
+ [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
+ > Coming soon.
 
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
