@@ -11,7 +11,7 @@ Recurrent Neural Networks are a class of machine learning models.  They are simi
 Inside of my neural network implementation you will find symbols that follow this notation.  If you are following along this is their meaning.  This is standard notation</br>
 x<sub>t</sub> corresponds to input at step t.</br>
 s<sub>t</sub> is the state at step t (hidden).</br>
-s<sub>t</sub> = f(Ux<sub>t</sub> + Ws<sub>t-1</sub>)</br>, we define out function f as a nonlinearity.  I will be using tanh for this.  U and W are parameters.
+s<sub>t</sub> = f(Ux<sub>t</sub> + Ws<sub>t-1</sub>), we define out function f as a nonlinearity.  I will be using tanh for this (defined below).  U and W are parameters to our neural network (we will also cover this later)
 o<sub>t</sub> is the output at step t.
 
 # Initial Thoughts and Predictions
