@@ -1,5 +1,5 @@
 <img src="D_Skeletons_color.jpg" alt="mascot" width=100%/>
-# The Grateful Net
+<h1 align="center">The Grateful Net</h1>
 
 <p align="center"><img src="mascot1.jpg" alt="mascot" height=50/>A tribute to the Grateful Dead.<img src="mascot1.jpg" alt="mascot" height=50/></p>
 
