@@ -17,11 +17,11 @@ __Numpy__</br>
  [Basic Tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)</br>
  [Full Documentation](https://docs.scipy.org/doc/numpy-1.11.0/reference/)</br>
 
-__Equations__:</br>
+__Equations__</br>
  tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)</br>
 </br>
 
-__Algorithms__:</br>
+__Algorithms__</br>
  [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)</br>
  [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)</br>
 </br>
