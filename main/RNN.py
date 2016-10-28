@@ -57,18 +57,11 @@ class RNN:
         return self.calculate_total_loss(x,y)/N
 
     # this just returns softmax
-    def softmax(self,x):
-        x=x.astype(float)
-        if x.ndim==1:
-            S=np.sum(np.exp(x))
-            return np.exp(x)/S
-        elif x.ndim==2:
-            result=np.zeros_like(x)
-            M,N=x.shape
-            for n in range(N):
-                S=np.sum(np.exp(x[:,n]))
-                result[:,n]=np.exp(x[:,n])/S
-            return result
+
+    def softmax(self,w, t = 1.0):
+        e = np.exp(np.array(w) / t)
+        dist = e / np.sum(e)
+        return dist
 
     # Take the most likely outcome, our RNN only creates probabilities.  We simply take the best
     def predict(self, x):
@@ -104,3 +97,10 @@ class RNN:
                 dLdU[:,x[bptt_step]] += delta_t
                 delta_t = self.W.T.dot(delta_t) * (1 - s[bptt_step-1] ** 2)
         return [dLdU, dLdV, dLdW]
+
+    def train(self,x,y,iterations = 1000):
+        for i in range(iterations):
+            du,dv,dw = self.bptt(x,y)
+            self.U += du
+            self.V +=dv
+            self.W+=dw

@@ -17,5 +17,5 @@ x_train, y_train = dm.get_training_data()
 print("Expected loss: %f" % (np.log(vocab_size)))
 print("Actual loss: %f" % (model.calculate_loss(x_train[:1000],y_train[:1000])))
 for x, y in zip(x_train, y_train):
-    model.bptt(x,y)
+    model.train(x,y)
     print("Actual loss: %f" % (model.calculate_loss(x_train[:1000],y_train[:1000])))
