@@ -80,3 +80,27 @@ class RNN:
         #tanh(x) = (e^x - e^-x)/(e^x +e^-x)
         #np.exp = e^x
         return (exp(x) - exp(-x))/(np.exp(x) + np.exp(-x))
+
+
+    def bptt(self, x, y):
+        T = len(y)
+
+        o,s = self.forward_propogation(x)
+
+        dLdU = np.zeros(self.U.shape)
+        dLdV = np.zeros(self.V.shape)
+        dLdW = np.zeros(self.W.shape)
+
+        delta_o = o
+        delta_o[np.arange(len(y)),y] -= 1
+
+        for t in np.arange(T)[::-1]:
+            dLdV = np.outer(delta_o[t], s[t].T)
+
+            delta_t = self.V.T.dot(delta_o[t]) * (1 - (s[t] **2))
+
+            for bptt_step in np.arange(max(0, t-self.bptt_depth),t+1)[::-1]:
+                dLdW += np.outer(delta_t, s[bptt_step-1])
+                dLdU[:,x[bptt_step]] += delta_t
+                delta_t = self.W.T.dot(delta_t) * (1 - s[bptt_step-1] ** 2)
+        return [dLdU, dLdV, dLdW]
