@@ -29,6 +29,9 @@ class data_manager:
         for i,sent in enumerate(self.sentences):
             self.parsed_sentences.append([w if w in self.word_to_index else self.unknown_token for w in sent])
 
+    def convert_to_words(self,x):
+        return [self.index_to_word[y] for y in x]
+
     def get_raw_data(self):
         return self.parsed_sentences
 

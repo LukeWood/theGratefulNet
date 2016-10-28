@@ -1,6 +1,7 @@
 from parsing.prepare_data import data_manager
 from glob import glob
 from RNN import RNN
+import numpy as np
 
 vocab_size = 2575
 
@@ -11,6 +12,7 @@ for i in glob("../data/*"):
 
 model = RNN(word_dim = vocab_size)
 
-X_Train, Y_Train = dm.get_training_data()
-
-o, s = model.forward_propogation(X_Train[10])
+x_train, y_train = dm.get_training_data()
+# This is with a random loss
+print("Expected loss: %f" % (np.log(vocab_size)))
+print("Actual loss: %f" % (model.calculate_loss(x_train[:1000],y_train[:1000])))

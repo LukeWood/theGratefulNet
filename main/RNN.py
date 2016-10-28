@@ -29,27 +29,50 @@ class RNN:
         for i in np.arange(steps_total):
             #Numpy .dot is actually matrix multiplication not dot product.
 
-            #v1 = 100x1
             v1 = s[i-1]
 
             #self.W = 100x100
 
             v2 = self.W.dot(v1)
-            #v2 = 100x1
 
             v3 = self.U[:,x[i]]
-            #v3 = 100x7
-
-            print(v2,v3)
 
             s[i] = np.tanh(v3 + v2)
-            o[i] = np.softmax(self.V.dot(s[i]))
+            o[i] = self.softmax(self.V.dot(s[i]))
 
         return [o, s]
 
+    # loss function represents total errors
+    def calculate_total_loss(self, x, y):
+        L = 0
+        for i in np.arange(len(y)):
+            o, s = self.forward_propogation(x[i])
+            correct_words = o[np.arange(len(y[i])), y[i]]
+
+            L+= -1 * np.sum(np.log(correct_words))
+        return L
+
+    def calculate_loss(self, x, y):
+        N = np.sum((len(y_i) for y_i in y))
+        return self.calculate_total_loss(x,y)/N
+
+    # this just returns softmax
+    def softmax(self,x):
+        x=x.astype(float)
+        if x.ndim==1:
+            S=np.sum(np.exp(x))
+            return np.exp(x)/S
+        elif x.ndim==2:
+            result=np.zeros_like(x)
+            M,N=x.shape
+            for n in range(N):
+                S=np.sum(np.exp(x[:,n]))
+                result[:,n]=np.exp(x[:,n])/S
+            return result
+
     # Take the most likely outcome, our RNN only creates probabilities.  We simply take the best
     def predict(self, x):
-        o, s = forward_propogation(x)
+        o, s = self.forward_propogation(x)
         return np.argmax(o, axis=1)
 
     #I'm defining this instead of using numpy's implementation so that we can try different nonlinear functions more easily.
