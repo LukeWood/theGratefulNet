@@ -32,7 +32,7 @@ To start this project, I have gone through some literature that I found essentia
 
 ## Equations
  tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)
- >tanh is our nonlinear function that we will use to determine our state at each step.
+ > tanh is our nonlinear function that we will use to determine our state at each step.
 
 ## Algorithms
  [Loss Function](https://en.wikipedia.org/wiki/Loss_function)

@@ -16,6 +16,11 @@ model = RNN(word_to_index,index_to_word,word_dim = vocab_size)
 
 model.load("models/model.data.npz")
 
-sentence = model.create_sentence()
+min_length = 4
+sentence = []
+while(len(sentence) < 4):
+    sentence = model.create_sentence()
+    print(sentence)
+
 
 print(" ".join(sentence))
