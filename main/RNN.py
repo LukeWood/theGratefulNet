@@ -166,7 +166,7 @@ class RNN:
         new_sentence = [self.word_to_index[sentence_start_token]]
 
         while not new_sentence[-1] == self.word_to_index[sentence_end_token]:
-            next_word_probs = self.forward_propogation(new_sentence)
+            next_word_probs = self.forward_propagation(new_sentence)
             sampled_word = self.word_to_index[unknown_token]
 
             while sampled_word == self.word_to_index[unknown_token]:
