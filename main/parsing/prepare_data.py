@@ -39,3 +39,6 @@ class data_manager:
         X = np.asarray([[self.word_to_index[w] for w in sent[:-1]] for sent in self.parsed_sentences])
         Y = np.asarray([[self.word_to_index[w] for w in sent[1:]] for sent in self.parsed_sentences])
         return X, Y
+
+    def get_indices(self):
+        return self.word_to_index, self.index_to_word

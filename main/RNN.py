@@ -13,10 +13,12 @@ import sys
 
 class RNN:
 
-    def __init__(self, word_dim, hidden_dim=100, bptt_truncate=4):
+    def __init__(self,word_to_index,index_to_word, word_dim, hidden_dim=100, bptt_truncate=4):
         # Assign instance variables
         self.word_dim = word_dim
         self.hidden_dim = hidden_dim
+        self.word_to_index = word_to_index
+        self.index_to_word = index_to_word
         self.bptt_truncate = bptt_truncate
         # Randomly initialize the network parameters
         U = np.random.uniform(-np.sqrt(1./word_dim), np.sqrt(1./word_dim), (hidden_dim, word_dim))
@@ -98,11 +100,11 @@ class RNN:
                 self.sgd_step(X_train[i], y_train[i], learning_rate)
             self.num_examples_seen += 1
 
-    def save_model_parameters_theano(self,outfile):
+    def save(self,outfile):
         U, V, W = self.U.get_value(), self.V.get_value(), self.W.get_value()
         np.savez(outfile, U=U, V=V, W=W)
 
-    def load_model_parameters_theano(self, path):
+    def load(self, path):
         npzfile = np.load(path)
         U, V, W = npzfile["U"], npzfile["V"], npzfile["W"]
         self.hidden_dim = U.shape[0]
@@ -155,3 +157,21 @@ class RNN:
                     return
                 it.iternext()
                 print("Gradient check for parameter %s passed." % (pname))
+
+    def create_sentence(self):
+
+        unknown_token = "UNKNOWN_TOKEN"
+        sentence_start_token = "SENTENCE_START"
+        sentence_end_token = "SENTENCE_END"
+        new_sentence = [self.word_to_index[sentence_start_token]]
+
+        while not new_sentence[-1] == self.word_to_index[sentence_end_token]:
+            next_word_probs = self.forward_propogation(new_sentence)
+            sampled_word = self.word_to_index[unknown_token]
+
+            while sampled_word == self.word_to_index[unknown_token]:
+                samples = np.random.multinomial(1, next_word_probs[-1])
+                sampled_word = np.argmax(samples)
+            new_sentence.append(sampled_word)
+        sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1]]
+        return sentence_str
