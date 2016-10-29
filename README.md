@@ -52,7 +52,11 @@ To start this project, I have gone through some literature that I found essentia
  [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)</br>
 
 # Implementation Steps
-Coming soon!
+1. Implement a vanilla Recurrent Neural Network
+2. Allow storage of networks to prevent the need for re-loading
+3. Create a web server allowing people to try the network out themselves.
+4. Create Jupyter Notebook presentation
+5. Optimize Network (Possibly moving to a Long Term Short Memory model)
 
 # Results
 Coming soon!
