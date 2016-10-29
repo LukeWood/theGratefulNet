@@ -6,7 +6,6 @@
 import numpy as np
 import theano as theano
 import theano.tensor as T
-from utils import *
 import operator
 from datetime import datetime
 import sys
@@ -98,6 +97,19 @@ class RNN:
                 # One SGD step
                 self.sgd_step(X_train[i], y_train[i], learning_rate)
             self.num_examples_seen += 1
+
+    def save_model_parameters_theano(self,outfile):
+        U, V, W = self.U.get_value(), self.V.get_value(), self.W.get_value()
+        np.savez(outfile, U=U, V=V, W=W)
+
+    def load_model_parameters_theano(self, path):
+        npzfile = np.load(path)
+        U, V, W = npzfile["U"], npzfile["V"], npzfile["W"]
+        self.hidden_dim = U.shape[0]
+        self.word_dim = U.shape[1]
+        self.U.set_value(U)
+        self.V.set_value(V)
+        self.W.set_value(W)
 
     def gradient_check_theano(self, x, y, h=0.001, error_threshold=0.01):
         # Overwrite the bptt attribute. We need to backpropagate all the way to get the correct gradient
