@@ -13,10 +13,11 @@ import sys
 
 class RNN:
 
-    def __init__(self,word_to_index,index_to_word, word_dim, hidden_dim=100, bptt_truncate=4):
+    def __init__(self,word_to_index,index_to_word, word_dim,fname=None, hidden_dim=100, bptt_truncate=4):
         # Assign instance variables
         self.word_dim = word_dim
         self.hidden_dim = hidden_dim
+        self.fname = fname
         self.word_to_index = word_to_index
         self.index_to_word = index_to_word
         self.bptt_truncate = bptt_truncate
@@ -81,14 +82,15 @@ class RNN:
     def train_with_sgd(self, X_train, y_train, learning_rate=0.005, nepoch=1, evaluate_loss_after=5):
         # We keep track of the losses so we can plot them later
         losses = []
-        num_examples_seen = 0
         for epoch in range(nepoch):
             # Optionally evaluate the loss
             if (epoch % evaluate_loss_after == 0):
                 loss = self.calculate_loss(X_train, y_train)
                 losses.append((num_examples_seen, loss))
                 time = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-                print("%s: Loss after num_examples_seen=%d epoch=%d: %f" % (time, num_examples_seen, epoch, loss) )
+                print("%s: Loss after num_examples_seen=%d epoch=%d: %f" % (time, self.num_examples_seen, epoch, loss) )
+                if self.fname is not None:
+                    self.save(self.fname)
                 # Adjust the learning rate if loss increases
                 if (len(losses) > 1 and losses[-1][1] > losses[-2][1]):
                     learning_rate = learning_rate * 0.5
