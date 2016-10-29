@@ -177,5 +177,5 @@ class RNN:
             new_sentence.append(sampled_word)
 
         if(len(new_sentence) >= 3):
-            sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if x < len(self.index_to_word)]
+            sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if self.index_to_word[x] != sentence_start_token]
             return sentence_str
