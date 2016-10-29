@@ -175,12 +175,7 @@ class RNN:
             samples = np.random.multinomial(1, next_word_probs[-1])
             sampled_word = np.argmax(samples)
             new_sentence.append(sampled_word)
-            if(len(new_sentence) >= 3):
-                sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1]]
-                print(" ".join(sentence_str))
+
         if(len(new_sentence) >= 3):
-            sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1]]
+            sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if x < len(self.index_to_word)]
             return sentence_str
-        else:
-            print("Redoing create sentence")
-            return create_sentence()

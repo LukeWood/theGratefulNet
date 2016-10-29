@@ -22,7 +22,7 @@ class data_manager:
     def __remove_uncommon(self):
         word_freq = nltk.FreqDist(itertools.chain(*self.sentences))
         words = word_freq.most_common(self.vocabulary_size-1)
-        self.index_to_word= [x[0] for x in words]
+        self.index_to_word = [x[0] for x in words]
         self.index_to_word.append(self.unknown_token)
         self.word_to_index = dict([(w,i) for i,w in enumerate(self.index_to_word)])
         self.parsed_sentences = []
