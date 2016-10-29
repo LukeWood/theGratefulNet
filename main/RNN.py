@@ -171,10 +171,13 @@ class RNN:
             next_word_probs = self.forward_propagation(new_sentence)
             sampled_word = self.word_to_index[unknown_token]
 
-            while sampled_word == self.word_to_index[unknown_token]:
-                samples = np.random.multinomial(1, next_word_probs[-1])
-                sampled_word = np.argmax(samples)
+            #while sampled_word == self.word_to_index[unknown_token]:
+            samples = np.random.multinomial(1, next_word_probs[-1])
+            sampled_word = np.argmax(samples)
             new_sentence.append(sampled_word)
+            if(len(new_sentence) >= 3):
+                sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1]]
+                print(" ".join(sentence_str))
         if(len(new_sentence) >= 3):
             sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1]]
             return sentence_str

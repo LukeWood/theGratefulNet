@@ -20,7 +20,6 @@ min_length = 4
 sentence = []
 while(len(sentence) < 4):
     sentence = model.create_sentence()
-    print(sentence)
 
 
 print(" ".join(sentence))
