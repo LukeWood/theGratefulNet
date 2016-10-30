@@ -1,7 +1,7 @@
 
-$.getJSON("song2.json",function (data){
+$.getJSON("song1.json",function (data){
     run(data);
-    });
+});
 
 
 function run(data){
