@@ -17,7 +17,7 @@ function run(data){
     if(i == lines.length){
       return;
     }
-    setTimeout(startLine,100);
+    setTimeout(startLine,1000);
   }
   )();
 }
