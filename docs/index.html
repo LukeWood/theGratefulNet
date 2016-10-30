@@ -10,82 +10,49 @@ Description: One column, no nav
 Version    : 1.0
 Released   : 20081009
 -->
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<DOCTYPE=html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="creativeinspiration.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+  html,body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+#song{
+  position:absolute;
+  background:#ccc;
+  width:80%;
+  left:10%;
+}
+.line{
+  font-size:30px;
+  animation: slide-left 1s;
+  border-bottom: solid black 1px;
+  margin-left:30px;
+}
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-<title>Grateful Net</title>
+  to {
+    margin-left: 30px;
+    width: 100%;
+  }
+}
+  </style>
+  <script src= "svg.js"></script>
+<meta charset="UTF-8">
 </head>
 
 <body>
-    <div id="page">
-
-        <div id="header">
-        	<div id="headerTitle">The Grateful Net</div>
-            <div id="headerSubText">An analysis on the inefficiency of vanilla recurrent neural networks and the various optimizations</div>
-
-        </div>
-
-        <div class="contentTitle"><h1>Sample using a vanilla RNN</h1></div>
-        <div class="contentText">
-          king the famous howl Just not</br>
-          Swing black-throated , mountain long pain down .</br>
-          reasons on the day all</br>
-          name</br>
-          southern .</br>
-          mile preserve in pullin 's when when .</br>
-          But but music</br>
-          Rome 'm For .</br>
-          's around and bank Playing design lovin' gun who be hang shafts glare need</br>
-          half it weight a follow and mine , granpa mind</br>
-          ta on the dead</br>
-          give me Night</br>
-          nine it Tulsa same them when Take can</br>
-          Bakers am to Asked passing If I go trouble</br>
-          Rockin to the orphan and winter</br>
-          Emptied by what Mona Then</br>
-          Bobby for the called to did</br>
-          splintered comin to my 'round ?</br>
-          should five</br>
-          Bite often suds Leaving me start</br>
-          married As Albuquerque up 's when</br>
-          stepped on the stranded Lady the suits is rain</br>
-          Texas for the wheels all more not</br>
-          if Detroit</br>
-          polished Samson to In ,</br>
-          dawn but in the choice and hand just but to got Standing coming followed</br>
-          Made swinging boss paint it coming 've it .</br>
-          grip Ai She the Cause</br>
-          feena that says grab 'd Have</br>
-          stranded head For redeeming PA more you on me .</br>
-          dawn Sweet</br>
-          fountain Kid and when kerosene bought fashions</br>
-          sperm attack bar day day back</br>
-          nowhere on the comes</br>
-          daddy flashes gleaming</br>
-          Everything , goodbye twenty Take without mountain bill seemed cigar before says</br>
-          rings n't heart have mind</br>
-          very to Water wake</br>
-          Wake on the cigar long to clouds</br>
-          thief you man</br>
-          Fortune familiar scared Hill ?</br>
-          bottle Four while Wake played back</br>
-          staggered a hat</br>
-          .45 And on the It</br>
-          building Why towards queen .</br>
-          voice Leaves madman all that 's door</br>
-          Catfish water am</br>
-          bottle Says shall got now</br>
-          Say in the require of Just mine in Night</br>
-          nature more Night of go</br>
-          <p><a href="https://github.com/LukeWoodSMU/theGratefulNet">(See the Code)</a></p>
-        </div>
-
-</div>
-        <div id="footer"><a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a></div>
+  <div id ="song">
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
