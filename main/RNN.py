@@ -184,7 +184,8 @@ class RNN:
         unknown_token = "UNKNOWN_TOKEN"
         sentence_start_token = "SENTENCE_START"
         sentence_end_token = "SENTENCE_END"
-        seed_sentence = i_seed_sentence[:]
+        seed_sentence = [self.word_to_index[x] for x in i_seed_sentence]
+        seed_sentence=[self.word_to_index[sentence_start_token]] + seed_sentence
         new_sentence = [self.word_to_index[sentence_start_token]]
 
         while not new_sentence[-1] == self.word_to_index[sentence_end_token]:
@@ -201,6 +202,5 @@ class RNN:
             if(len(new_sentence) > 50):
                 return self.create_seeded_sentence(i_seed_sentence)
 
-        if(len(new_sentence) >= 3):
-            sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if self.index_to_word[x] != sentence_start_token]
-            return sentence_str
+        sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if self.index_to_word[x] != sentence_start_token]
+        return sentence_str

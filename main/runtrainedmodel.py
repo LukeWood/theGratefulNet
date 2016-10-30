@@ -19,7 +19,6 @@ model.load("models/model.data.npz")
 sentence = []
 
 sentence = model.create_sentence()
-
 for i  in range(50):
-    print(" ".join(sentence))
-    sentence = model.create_seeded_sentence(sentence[:-1][-2:])
+    print(" ".join(sentence)+"</br>")
+    sentence = model.create_sentence()
