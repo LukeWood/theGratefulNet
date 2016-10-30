@@ -16,8 +16,10 @@ model = RNN(word_to_index,index_to_word,word_dim = vocab_size)
 
 model.load("models/model.data.npz")
 
-min_length = 4
 sentence = []
 
 sentence = model.create_sentence()
-print(" ".join(sentence))
+
+for i  in range(50):
+    print(" ".join(sentence))
+    sentence = model.create_seeded_sentence(sentence[:-1][-2:])

@@ -175,6 +175,31 @@ class RNN:
             samples = np.random.multinomial(1, next_word_probs[-1])
             sampled_word = np.argmax(samples)
             new_sentence.append(sampled_word)
+            if(len(new_sentence) > 50):
+                return self.create_sentence()
+        sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if self.index_to_word[x] != sentence_start_token]
+        return sentence_str
+
+    def create_seeded_sentence(self, i_seed_sentence):
+        unknown_token = "UNKNOWN_TOKEN"
+        sentence_start_token = "SENTENCE_START"
+        sentence_end_token = "SENTENCE_END"
+        seed_sentence = i_seed_sentence[:]
+        new_sentence = [self.word_to_index[sentence_start_token]]
+
+        while not new_sentence[-1] == self.word_to_index[sentence_end_token]:
+            next_word_probs = self.forward_propagation(seed_sentence)
+            sampled_word = self.word_to_index[unknown_token]
+
+            #while sampled_word == self.word_to_index[unknown_token]:
+            samples = np.random.multinomial(1, next_word_probs[-1])
+            sampled_word = np.argmax(samples)
+
+            new_sentence.append(sampled_word)
+            seed_sentence.append(sampled_word)
+
+            if(len(new_sentence) > 50):
+                return self.create_seeded_sentence(i_seed_sentence)
 
         if(len(new_sentence) >= 3):
             sentence_str = [self.index_to_word[x] for x in new_sentence[1:-1] if self.index_to_word[x] != sentence_start_token]
