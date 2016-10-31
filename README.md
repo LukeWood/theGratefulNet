@@ -61,4 +61,4 @@ To start this project, I have gone through some literature that I found essentia
 Coming soon!
 
 # Live demo
-Coming soon!
+[Samples of the results](https://lukewoodsmu.github.io/theGratefulNet)
