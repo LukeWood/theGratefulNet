@@ -13,39 +13,58 @@ Released   : 20081009
 <DOCTYPE=html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Arimo|Calligraffitti" rel="stylesheet">
   <title>theGratefulNet</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <style>
+*{
+  padding:0;
+  margin:0;
+}
   html,body{
-    background-color:#000;
+    background-color:#fff;
     width:100%;
     height:100%;
     margin:0;
     padding:0;
     overflow-x: hidden;
+    background-image: url("background.jpg");
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
 }
-#song{
+#primarycontainer{
   position:absolute;
-  background:#ccc;
+  background: rgba(255,255,255,.7);
   width:80%;
   min-height:100%;
+  margin-top:0;
+  border: solid rgba(100,100,100,.3) 1px;
   left:10%;
 }
 .line{
+  font-family: 'Arimo', sans-serif;
   font-size:30px;
-  animation: slide-left 2s;
+  //animation: slide-left 2s;
   border-bottom: solid black 1px;
-  margin-left:30px;
+  padding-left:30px;
+}
+.line:hover{
+  background:white;
+}
+#innercontainer1{
+  background:white;
+}
+#innercontainer2{
+  background:white;
 }
 @keyframes slide-left {
   from {
-    margin-left: 100%;
-    width: 300%;
+    margin-top: 100%;
   }
 
   to {
-    margin-left: 30px;
-    width: 100%;
+    margin-top: 30px;
   }
 }
   </style>
@@ -53,9 +72,13 @@ Released   : 20081009
 </head>
 
 <body>
-  <img style="width:80%; margin-left:10%" src="D_Skeletons_color.jpg"></img>
-  <div id ="song">
-    <center id = "cen"><h1>The Grateful Net Presents:</h1></center>
+  <div id ="primarycontainer">
+    <center id = "song1title" style="font-family: 'Calligraffitti', cursive; font-size:40px"><h1>The Vanilla Grateful Net Presents:</h1></center>
+    <div id="innercontainer1"></div>
+    <center id = "song2title" style="font-family: 'Calligraffitti', cursive; font-size:40px"><h1>The Vanilla Grateful Net Presents:</h1></center>
+    <div id="innercontainer2"></div>
+    <center id = "song2title" style="font-family: 'Calligraffitti', cursive; font-size:40px"><h1>Coming Soon: The LSTM Grateful Net</h1></center>
+    <div id="innercontainer3"></div>
   </div>
   <script src="index.js"></script>
 </body>

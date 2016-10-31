@@ -3,6 +3,8 @@ from glob import glob
 from RNN import RNN
 import numpy as np
 
+import json
+
 vocab_size = 2575
 
 dm = data_manager(vocab_size=vocab_size)
@@ -18,7 +20,13 @@ model.load("models/model.data.npz")
 
 sentence = []
 
-sentence = model.create_sentence()
-for i  in range(50):
-    print(" ".join(sentence)+"</br>")
+all_sents = []
+for i  in range(100):
     sentence = model.create_sentence()
+    all_sents.append(" ".join(sentence).replace(".",".</br>").replace(",",",</br>"))
+
+jsobj=  dict()
+jsobj["text"] = " ".join(all_sents)
+
+print(json.dumps(jsobj))
+
