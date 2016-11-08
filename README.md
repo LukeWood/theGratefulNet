@@ -56,8 +56,10 @@ To start this project, I have gone through some literature that I found essentia
  > Now onto the actual algorithm:
  > Step 1: Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>
  > We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.
- > 
-
+ > Step 2:  Forward Propagate a training input to get an output for the training input
+ > Step 3:  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.
+ > Step 4:  Update Weights by multipying the error and input value and subtracting that value from the weight at layer i
+ > Step 5:  Repeat until we have our desired output set (as defined by you).
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
  > Coming soon!
@@ -73,7 +75,8 @@ To start this project, I have gone through some literature that I found essentia
 4. Optimize Network (Possibly moving to a Long Term Short Memory model)
 
 # Results
-Coming soon!
+After implementing my vanilla recurrent neural network, I trained it for one hour on a macbook pro.  This yielded the following results:
+
 
 # Live demo
 [Samples of the results](https://lukewoodsmu.github.io/theGratefulNet)
