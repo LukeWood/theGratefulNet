@@ -51,7 +51,12 @@ To start this project, I have gone through some literature that I found essentia
  > We also select an error function given by E(y,y<sup>1</sup>)
  > Our standard choice of an error function is E = |y-y<sup>1</sup>|<sup>2</sup>
  
-
+ > Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub>
+ 
+ > Now onto the actual algorithm:
+ > Step 1: Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>
+ > We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.
+ > 
 
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
