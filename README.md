@@ -15,7 +15,7 @@ s<sub>t</sub> = f(Ux<sub>t</sub> + Ws<sub>t-1</sub>), we define out function f a
 o<sub>t</sub> is the output at step t.
 
 # Initial Thoughts and Predictions
-My first guess is that the network will naturally tend to separate these two authors as their language diction is incredibly different.  If we input a word more related to Doctor Seuss than NWA I hypothesize that the network will drive itself towards an output of almost entire in Doctor Seuss' diction.
+My first guess is that the network will naturally tend to distinguish between nouns, verbs and adjectives.  My hope is that the network will also quickly understand where to place punctuation.
 
 # Literature
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
