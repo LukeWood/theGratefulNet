@@ -78,5 +78,5 @@ To start this project, I have gone through some literature that I found essentia
 After implementing my vanilla recurrent neural network, I trained it for one hour on a macbook pro.  This yielded the following results:
 
 
-# Live demo
+# Samples From One Hour of Training
 [Samples of the results](https://lukewoodsmu.github.io/theGratefulNet)
