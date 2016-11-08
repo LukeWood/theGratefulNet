@@ -42,7 +42,17 @@ To start this project, I have gone through some literature that I found essentia
  > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
 
  [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
- > Coming soon!
+ > Backpropogation stands for Backwards Error Propogation.  In order to use this algorithm we must define a few things.  We must have a series of vectors that all lie in the same space. The following series of vectors are defined as follows:
+ > X<sub>inputs</sub> = x, x<sub>1</sub>, x<sub>2</sub>, ...
+ > Y<sub>outputs</sub> = y, y<sub>1</sub>, y<sub>2</sub>, ...
+ > W<sub>weights</sub> = w, w<sub>1</sub>, w<sub>2</sub>, ...
+ 
+ > We have y = f<sub>N</sub>(w, x)
+ > We also select an error function given by E(y,y<sup>1</sup>)
+ > Our standard choice of an error function is E = |y-y<sup>1</sup>|<sup>2</sup>
+ 
+
+
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
  > Coming soon!
