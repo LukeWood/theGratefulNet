@@ -67,7 +67,8 @@ To start this project, I have gone through some literature that I found essentia
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
  [Recurrent Neural Network](https://en.wikipedia.org/wiki/Recurrent_neural_network)</br>
-
+ [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory)</br>
+ 
 # Implementation Steps
 1. Implement a vanilla Recurrent Neural Network
 2. Allow storage of networks to prevent the need for re-loading
