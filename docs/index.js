@@ -6,7 +6,21 @@ $.getJSON("song2.json",function (data){
     run(data,document.getElementById("innercontainer2"),document.getElementById("song2title"));
 });
 
+if(typeof(String.prototype.trim) === "undefined")
+{
+    String.prototype.trim = function()
+    {
+        return String(this).replace(/^\s+|\s+$/g, '');
+    };
+}
 
+function capitolize(str){
+  var val = str.trim()
+  if(val.length <= 1){
+    return "";
+  }
+  return val[0].toUpperCase() + val.slice(1);
+}
 
 function run(data,dom_element,title_div){
   var song = dom_element;
@@ -18,9 +32,11 @@ function run(data,dom_element,title_div){
   (function startLine(i){
     var line = document.createElement("p");
     line.className = "line";
-    line.innerHTML = lines[i];
+    line.innerHTML = capitolize(lines[i]);
     i++;
-    song.appendChild(line);
+    if(line.innerHTML.length > 1){
+      song.appendChild(line);
+    }
     if(i == lines.length){
       return;
     }
