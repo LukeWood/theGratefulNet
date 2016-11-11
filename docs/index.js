@@ -1,18 +1,21 @@
 
 $.getJSON("song1.json",function (data){
-    run(data);
+    run(data,document.getElementById("innercontainer1"),document.getElementById("song1title"));
 });
 $.getJSON("song2.json",function (data){
-    run2(data);
+    run(data,document.getElementById("innercontainer2"),document.getElementById("song2title"));
 });
-function run2(data){
-  var song = document.getElementById("innercontainer2");
+
+
+
+function run(data,dom_element,title_div){
+  var song = dom_element;
   var lines = data.text.split("</br>");
   var i = 1;
   var title = document.createElement("h2");
   title.innerHTML = lines[0]+"</br>";
   title.setAttribute("style","font-family: 'Calligraffitti', cursive; font-size:35px;");
-  document.getElementById("song2title").appendChild(title);
+  title_div.appendChild(title);
   (function startLine(){
     var line = document.createElement("p");
     line.className = "line";
@@ -24,30 +27,6 @@ function run2(data){
     }
 //    setTimeout(startLine,300);
 
-    startLine();
-  }
-  )();
-}
-
-
-function run(data){
-  var song = document.getElementById("innercontainer1");
-  var lines = data.text.split("</br>");
-  var i = 1;
-  var title = document.createElement("h2");
-  title.innerHTML = lines[0];
-  title.setAttribute("style","font-family: 'Calligraffitti', cursive; font-size:35px;");
-  document.getElementById("song1title").appendChild(title);
-  (function startLine(){
-    var line = document.createElement("p");
-    line.className = "line";
-    line.innerHTML = lines[i];
-    i++;
-    song.appendChild(line);
-    if(i == lines.length){
-      return;
-    }
-  //  setTimeout(startLine,300);
     startLine();
   }
   )();
