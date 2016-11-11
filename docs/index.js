@@ -11,12 +11,11 @@ $.getJSON("song2.json",function (data){
 function run(data,dom_element,title_div){
   var song = dom_element;
   var lines = data.text.split("</br>");
-  var i = 1;
   var title = document.createElement("h2");
   title.innerHTML = lines[0]+"</br>";
   title.setAttribute("style","font-family: 'Calligraffitti', cursive; font-size:35px;");
   title_div.appendChild(title);
-  (function startLine(){
+  (function startLine(i){
     var line = document.createElement("p");
     line.className = "line";
     line.innerHTML = lines[i];
@@ -25,9 +24,7 @@ function run(data,dom_element,title_div){
     if(i == lines.length){
       return;
     }
-//    setTimeout(startLine,300);
-
-    startLine();
+    startLine(i+1);
   }
-  )();
+)(1);
 }
