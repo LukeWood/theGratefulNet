@@ -29,6 +29,7 @@ function run(data,dom_element,title_div){
   title.innerHTML = lines[0]+"</br>";
   title.setAttribute("style","font-family: 'Calligraffitti', cursive; font-size:35px;");
   title_div.appendChild(title);
+
   (function startLine(i){
     var line = document.createElement("p");
     line.className = "line";
@@ -43,4 +44,5 @@ function run(data,dom_element,title_div){
     startLine(i+1);
   }
 )(1);
+
 }
