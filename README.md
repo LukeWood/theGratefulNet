@@ -76,8 +76,13 @@ To start this project, I have gone through some literature that I found essentia
 4. Optimize Network (Possibly moving to a Long Term Short Memory model)
 
 # Results
-After implementing my vanilla recurrent neural network, I trained it for one hour on a macbook pro.  This yielded the following results:
+After implementing my vanilla recurrent neural network, I trained it for one hour on the GPU of a macbook.  This yielded the following results:
 
+1.)  Adjectives are rarely adjacent to one another.  This is good, the network has quickly found a correlation between the classes of words (Noun, Verb, Adjective).
+
+2.)  There is still a great deal of incoherent text.  This is due to a combination of limited training resources, as well as the type of neural network.  Vanilla recurrent neural networks are pretty poor at working with natural language.
+
+3.)  Having a noun selected recently makes it much more likely to show up again in the near future.  This is good!  We see repetition of nouns in the original songs a great deal.  
 
 # Samples From One Hour of Training
 [Samples of the results](https://lukewoodsmu.github.io/theGratefulNet)
