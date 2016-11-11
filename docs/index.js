@@ -10,7 +10,7 @@ function run2(data){
   var lines = data.text.split("</br>");
   var i = 1;
   var title = document.createElement("h2");
-  title.innerHTML = lines[0];
+  title.innerHTML = lines[0]+"</br>";
   title.setAttribute("style","font-family: 'Calligraffitti', cursive; font-size:35px;");
   document.getElementById("song2title").appendChild(title);
   (function startLine(){
