@@ -59,24 +59,23 @@ To start this project, I have gone through some literature that I found essentia
  
  > Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub>
  
- > Now onto the actual algorithm:
- > Step 1:  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>
- > We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.
- > Step 2:  Forward Propagate a training input to get an output for the training input
- > Step 3:  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.
- > Step 4:  Update Weights by multipying the error and input value and subtracting that value from the weight at layer i
- > Step 5:  Repeat until we have our desired output set (as defined by you).
+Now onto the actual algorithm:
+**Step 1:**  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>.  We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.</br>
+**Step 2:**  Forward Propagate a training input to get an output for the training input</br>
+**Step 3:**  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.</br>
+**Step 4:**  Update Weights by multipying the error and input value and subtracting that value from the weight at layer value i.</br>
+**Step 5:**  Repeat until we have our desired output set (as defined by you).</br>
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
 One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:
 
-> Step 1:  Get training data in the format of ordered pairs.  This could be for example the pixels in an image up until a specific point with the output being the next pixel in the image.
-> Step 2:  "Unfold" the network.  In simple terms, this means that we need to look at each hidden layer independantly.  
-> Step 3:  Initialize a vector, x<sub>0</sub> to contain a set of all zeros.  This represents the intial state of our network.
-> Step 4:  For each time step that impacts our output, can also be thought of as the depth of the networks memory or the number of hidden layers, feed in a piece of training data the corresponds to that time frame.  Calculate the networks current output and find the error compared to the desired output using our Loss function as defined above.
-> Step 5:  This is where we really differ from backpropogation.  We now backpropogate the error through every layer in the unfolded network.  This updates the weights at every layer and allows us to lower the loss associated with this piece of training data essentially "teaching" the network something.
-> Step 6:  Replace our initialization vector x<sub>0</sub> with the output computed.  This serves as the existing memory that the network would have at this point in time.
-> Step 7:  Repeat until we reach our stopping criteria.
+**Step 1:**  Get training data in the format of ordered pairs.  This could be for example the pixels in an image up until a specific point with the output being the next pixel in the image.</br>
+**Step 2:**  "Unfold" the network.  In simple terms, this means that we need to look at each hidden layer independantly.  </br>
+**Step 3:**  Initialize a vector, x<sub>0</sub> to contain a set of all zeros.  This represents the intial state of our network.</br>
+**Step 4:**  For each time step that impacts our output, can also be thought of as the depth of the networks memory or the number of hidden layers, feed in a piece of training data the corresponds to that time frame.  Calculate the networks current output and find the error compared to the desired output using our Loss function as defined above.</br>
+**Step 5:**  This is where we really differ from backpropogation.  We now backpropogate the error through every layer in the unfolded network.  This updates the weights at every layer and allows us to lower the loss associated with this piece of training data essentially "teaching" the network something.</br>
+**Step 6:**  Replace our initialization vector x<sub>0</sub> with the output computed.  This serves as the existing memory that the network would have at this point in time.</br>
+**Step 7:**  Repeat until we reach our stopping criteria.</br>
 
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
