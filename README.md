@@ -21,7 +21,7 @@ s<sub>t</sub> = f(Ux<sub>t</sub> + Ws<sub>t-1</sub>), we define out function f a
 o<sub>t</sub> is the output at step t.
 
 # Initial Thoughts and Predictions
-My first guess is that the network will naturally tend to distinguish between nouns, verbs and adjectives.  My hope is that the network will also quickly understand where to place punctuation.
+My first guess is that the network will naturally tend to distinguish between nouns, verbs and adjectives.  My hope is that the network will also quickly understand where to place punctuation.  I hope that the network will be able to write coherent sentences after a relatively short period of time.  Vanilla Recurrent Neural Networks have a reputation of being pretty poor at natural language analysis, however I believe that song lyrics are far simpler than normal language and believe that our network will be fairly effective.
 
 # Literature
 To start this project, I have gone through some literature that I found essential to the understanding and creation of a Recurrent Neural Network.</br>
