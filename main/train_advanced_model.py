@@ -12,14 +12,13 @@ for i in glob("../data/*"):
 
 word_to_index, index_to_word = dm.get_indices()
 
-model = RNN(word_to_index,index_to_word,word_dim = vocab_size)
+model = RNN(word_to_index,index_to_word,word_dim = vocab_size,fname="models/model.data")
 
 x_train, y_train = dm.get_training_data()
 # This is with a random loss
 
 model.train_with_sgd(x_train,y_train,nepoch=1000, learning_rate=.005)
 
-model.save("models/model.data")
 
 sentence = model.create_sentence()
 

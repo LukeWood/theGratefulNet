@@ -86,7 +86,7 @@ class RNN:
             # Optionally evaluate the loss
             if (epoch % evaluate_loss_after == 0):
                 loss = self.calculate_loss(X_train, y_train)
-                losses.append((num_examples_seen, loss))
+                losses.append((self.num_examples_seen, loss))
                 time = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
                 print("%s: Loss after num_examples_seen=%d epoch=%d: %f" % (time, self.num_examples_seen, epoch, loss) )
                 if self.fname is not None:
