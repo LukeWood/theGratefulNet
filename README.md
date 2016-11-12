@@ -59,7 +59,7 @@ To start this project, I have gone through some literature that I found essentia
  
  > Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub>
  
-Now onto the actual algorithm:
+Now onto the actual algorithm:</br>
 **Step 1:**  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>.  We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.</br>
 **Step 2:**  Forward Propagate a training input to get an output for the training input</br>
 **Step 3:**  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.</br>
@@ -67,7 +67,7 @@ Now onto the actual algorithm:
 **Step 5:**  Repeat until we have our desired output set (as defined by you).</br>
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
-One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:
+One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:</br>
 
 **Step 1:**  Get training data in the format of ordered pairs.  This could be for example the pixels in an image up until a specific point with the output being the next pixel in the image.</br>
 **Step 2:**  "Unfold" the network.  In simple terms, this means that we need to look at each hidden layer independantly.  </br>
