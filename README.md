@@ -6,8 +6,9 @@
 # Concept
 Recurrent Neural Networks are a class of machine learning models.  They are similar to a classic neural network, however they "remember" their previous states.  This is very useful when dealing with sequences, including but not limited to natural language.  We will be training out network model on music lyrics, and hopefully we will get some interesting music lyrics out.
 ___
-
 <p align="center"><img src="img/Elman_srnn.png" height=300/> <br> Recurrent Neural Network diagram from Wikipedia that I found useful</p>
+___
+
 # Goals
 
 My Goal in this project is to demystify a few machine learning algorithms.  When I hear backpropagation, I know it is an algorithm to train a neural network; but how exactly does this work?  Through this project I will clarify this among other questions relating to RNNs.
