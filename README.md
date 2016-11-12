@@ -4,11 +4,13 @@
 <p align="center"><img src="img/mascot1.jpg" alt="mascot" height=50/>A tribute to the Grateful Dead.<img src="img/mascot1.jpg" alt="mascot" height=50/></p>
 
 # Concept
-
 Recurrent Neural Networks are a class of machine learning models.  They are similar to a classic neural network, however they "remember" their previous states.  This is very useful when dealing with sequences, including but not limited to natural language.  We will be training out network model on music lyrics, and hopefully we will get some interesting music lyrics out.
 
+# Goals
+My Goal in this project is to demystify a few machine learning algorithms.  When I hear backpropagation, I know it is an algorithm to train a neural network; but how exactly does this work?  Through this project I will clarify this among other questions relating to RNNs.
+
 # Notation
-Inside of my neural network implementation you will find symbols that follow this notation.  If you are following along this is their meaning.  This is standard notation</br>
+Inside of my neural network implementation you will find symbols that follow this notation.  If you are following along this is their meaning.  This is fairly standard notation when discussing math, particularly in relation to neural nets.</br>
 x<sub>t</sub> corresponds to input at step t.</br>
 s<sub>t</sub> is the state at step t.  This is what allows our network to "remember" previous inputs.</br>
 s<sub>t</sub> = f(Ux<sub>t</sub> + Ws<sub>t-1</sub>), we define out function f as a nonlinearity.  I will be using tanh for this (defined below).  U and W are parameters to our neural network (we will also cover this later)
@@ -36,7 +38,7 @@ To start this project, I have gone through some literature that I found essentia
 
 ## Algorithms
  [Loss Function](https://en.wikipedia.org/wiki/Loss_function)
- > Also known as a cost function, this function maps a set of values to the "cost" of running them.  This allows us to optimize our neural network based on the values at each step.
+ > Also known as a cost function, this function maps a set of values to the "cost" of running them.  This allows us to optimize our neural network based on the values at each step.  For example a cost could be defined as the amount of information lost between states, or the difference between our perfect output and our expected output.
 
  [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
  > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
@@ -54,7 +56,7 @@ To start this project, I have gone through some literature that I found essentia
  > Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub>
  
  > Now onto the actual algorithm:
- > Step 1: Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>
+ > Step 1:  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>
  > We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.
  > Step 2:  Forward Propagate a training input to get an output for the training input
  > Step 3:  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.
@@ -62,7 +64,15 @@ To start this project, I have gone through some literature that I found essentia
  > Step 5:  Repeat until we have our desired output set (as defined by you).
 
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
- > Coming soon!
+One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:
+
+> Step 1:  Get training data in the format of ordered pairs.  This could be for example the pixels in an image up until a specific point with the output being the next pixel in the image.
+> Step 2:  "Unfold" the network.  In simple terms, this means that we need to look at each hidden layer independantly.  
+> Step 3:  Initialize a vector, x<sub>0</sub> to contain a set of all zeros.  This represents the intial state of our network.
+> Step 4:  For each time step that impacts our output, can also be thought of as the depth of the networks memory or the number of hidden layers, feed in a piece of training data the corresponds to that time frame.  Calculate the networks current output and find the error compared to the desired output using our Loss function as defined above.
+> Step 5:  This is where we really differ from backpropogation.  We now backpropogate the error through every layer in the unfolded network.  This updates the weights at every layer and allows us to lower the loss associated with this piece of training data essentially "teaching" the network something.
+> Step 6:  Replace our initialization vector x<sub>0</sub> with the output computed.  This serves as the existing memory that the network would have at this point in time.
+> Step 7:  Repeat until we reach our stopping criteria.
 
 ## Neural Networks
  [Forward Feed Network](https://en.wikipedia.org/wiki/Feedforward_neural_network)</br>
