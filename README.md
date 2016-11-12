@@ -57,7 +57,7 @@ We have y = f<sub>N</sub>(w, x)</br>
 We also select an error function given by E(y,y<sup>1</sup>)</br>
 Our standard choice of an error function is E = |y-y<sup>1</sup>|<sup>2</sup></br>
  Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub></br>
- 
+ </br>
 Now onto the actual algorithm:</br>
 **Step 1:**  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>.  We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.</br>
 **Step 2:**  Forward Propagate a training input to get an output for the training input</br>
@@ -66,7 +66,8 @@ Now onto the actual algorithm:</br>
 **Step 5:**  Repeat until we have our desired output set (as defined by you).</br>
 ___
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
-One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:</br>
+One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  </br>
+The algorithm performs the following steps:</br>
 
 **Step 1:**  Get training data in the format of ordered pairs.  This could be for example the pixels in an image up until a specific point with the output being the next pixel in the image.</br>
 **Step 2:**  "Unfold" the network.  In simple terms, this means that we need to look at each hidden layer independantly.  </br>
