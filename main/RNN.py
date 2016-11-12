@@ -87,8 +87,7 @@ class RNN:
             if (epoch % evaluate_loss_after == 0):
                 loss = self.calculate_loss(X_train, y_train)
                 losses.append((self.num_examples_seen, loss))
-                time = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
-                print("%s: Loss after num_examples_seen=%d epoch=%d: %f" % (time, self.num_examples_seen, epoch, loss) )
+                print("Loss after %d examples.  epoch=%d: %f" % (self.num_examples_seen, epoch, loss) )
                 if self.fname is not None:
                     self.save(self.fname)
                 # Adjust the learning rate if loss increases
@@ -114,51 +113,6 @@ class RNN:
         self.U.set_value(U)
         self.V.set_value(V)
         self.W.set_value(W)
-
-    def gradient_check_theano(self, x, y, h=0.001, error_threshold=0.01):
-        # Overwrite the bptt attribute. We need to backpropagate all the way to get the correct gradient
-        self.bptt_truncate = 1000
-        # Calculate the gradients using backprop
-        bptt_gradients = self.bptt(x, y)
-        # List of all parameters we want to chec.
-        model_parameters = ['U', 'V', 'W']
-        # Gradient check for each parameter
-        for pidx, pname in enumerate(model_parameters):
-            # Get the actual parameter value from the mode, e.g. model.W
-            parameter_T = operator.attrgetter(pname)(self)
-            parameter = parameter_T.get_value()
-            print ("Performing gradient check for parameter %s with size %d." % (pname, np.prod(parameter.shape)))
-            # Iterate over each element of the parameter matrix, e.g. (0,0), (0,1), ...
-            it = np.nditer(parameter, flags=['multi_index'], op_flags=['readwrite'])
-            while not it.finished:
-                ix = it.multi_index
-                # Save the original value so we can reset it later
-                original_value = parameter[ix]
-                # Estimate the gradient using (f(x+h) - f(x-h))/(2*h)
-                parameter[ix] = original_value + h
-                parameter_T.set_value(parameter)
-                gradplus = self.calculate_total_loss([x],[y])
-                parameter[ix] = original_value - h
-                parameter_T.set_value(parameter)
-                gradminus = self.calculate_total_loss([x],[y])
-                estimated_gradient = (gradplus - gradminus)/(2*h)
-                parameter[ix] = original_value
-                parameter_T.set_value(parameter)
-                # The gradient for this parameter calculated using backpropagation
-                backprop_gradient = bptt_gradients[pidx][ix]
-                # calculate The relative error: (|x - y|/(|x| + |y|))
-                relative_error = np.abs(backprop_gradient - estimated_gradient)/(np.abs(backprop_gradient) + np.abs(estimated_gradient))
-                # If the error is to large fail the gradient check
-                if relative_error > error_threshold:
-                    print("Gradient Check ERROR: parameter=%s ix=%s" % (pname, ix))
-                    print("+h Loss: %f" % gradplus)
-                    print("-h Loss: %f" % gradminus)
-                    print("Estimated_gradient: %f" % estimated_gradient)
-                    print("Backpropagation gradient: %f" % backprop_gradient)
-                    print("Relative Error: %f" % relative_error)
-                    return
-                it.iternext()
-                print("Gradient check for parameter %s passed." % (pname))
 
     def create_sentence(self):
 
