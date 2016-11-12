@@ -42,22 +42,21 @@ To start this project, I have gone through some literature that I found essentia
 
 ## Algorithms
  [Loss Function](https://en.wikipedia.org/wiki/Loss_function)
- > Also known as a cost function, this function maps a set of values to the "cost" of running them.  This allows us to optimize our neural network based on the values at each step.  For example a cost could be defined as the amount of information lost between states, or the difference between our perfect output and our expected output.
-
+ Also known as a cost function, this function maps a set of values to the "cost" of running them.  This allows us to optimize our neural network based on the values at each step.  For example a cost could be defined as the amount of information lost between states, or the difference between our perfect output and our expected output.
+___
  [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)
- > Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
-
+ Gradient Descent is an algorithm used to solve a system of linear equations.  This is essential to our backpropogation algorithm.
+___
  [Backwards Error Propogation (backpropogation for short)](https://en.wikipedia.org/wiki/Backpropagation)
- > Backpropogation stands for Backwards Error Propogation.  In order to use this algorithm we must define a few things.  We must have a series of vectors that all lie in the same space. The following series of vectors are defined as follows:
- > X<sub>inputs</sub> = x, x<sub>1</sub>, x<sub>2</sub>, ...
- > Y<sub>outputs</sub> = y, y<sub>1</sub>, y<sub>2</sub>, ...
- > W<sub>weights</sub> = w, w<sub>1</sub>, w<sub>2</sub>, ...
+ Backpropogation stands for Backwards Error Propogation.  In order to use this algorithm we must define a few things.  We must have a series of vectors that all lie in the same space. The following series of vectors are defined as follows:</br>
+X<sub>inputs</sub> = x, x<sub>1</sub>, x<sub>2</sub>, ...</br>
+Y<sub>outputs</sub> = y, y<sub>1</sub>, y<sub>2</sub>, ...</br>
+W<sub>weights</sub> = w, w<sub>1</sub>, w<sub>2</sub>, ...</br>
  
- > We have y = f<sub>N</sub>(w, x)
- > We also select an error function given by E(y,y<sup>1</sup>)
- > Our standard choice of an error function is E = |y-y<sup>1</sup>|<sup>2</sup>
- 
- > Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub>
+We have y = f<sub>N</sub>(w, x)</br>
+We also select an error function given by E(y,y<sup>1</sup>)</br>
+Our standard choice of an error function is E = |y-y<sup>1</sup>|<sup>2</sup></br>
+ Our output from this algorithm is an optimized series of weights that will allow us to transform x<sub>i</sub> => y<sub>i</sub></br>
  
 Now onto the actual algorithm:</br>
 **Step 1:**  Randomly assign weights w, w<sub>1</sub> ... w<sub>n</sub>.  We take a series of example inputs that we already have desired outputs for.  This is denoted as our training set.</br>
@@ -65,7 +64,7 @@ Now onto the actual algorithm:</br>
 **Step 3:**  Backwards Propagation to generate the error, which is difference between the targeted and actual output values, of each output in the hidden layers.</br>
 **Step 4:**  Update Weights by multipying the error and input value and subtracting that value from the weight at layer value i.</br>
 **Step 5:**  Repeat until we have our desired output set (as defined by you).</br>
-
+___
  [Backpropogation Through Time (this shows up as bppt in our implementation)](http://minds.jacobs-university.de/sites/default/files/uploads/papers/ESNTutorialRev.pdf)
 One very interesting fact about Backpropogation Through Time (BPTT) is that it has been derived by various researchers with no intercommunication between them.  This suggests that this algorithm is a fairly intuitive solution to solving the problem of training recurrent neural networks.  The algorithm performs the following steps:</br>
 
