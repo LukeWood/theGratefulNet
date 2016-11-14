@@ -107,6 +107,8 @@ Here is a screenshot of the training convergence:
 
 This immediate drop in loss can likely be attributed to the networks effectiveness in determining adjective, noun, and verb placement.  With a final error rate of 5, which is only 37.5% decrease in error from randomness, it is clear that we need to re-evaluate our model's architecture.
 
+I do believe that the results from the vanilla recurrent neural network yields promising enough results that it is fair to say that neural networks have the potential to recreate the feel associated with a particular artist.
+
 # Going Forwards
 Unfortunately, I have not yet had the time to overhaul the networks architecture.  In the near future, I will improve the GratefulNet by changing it to a Long Short Term Memory (LSTM) network.  These have consistently proven better at natural language production and analysis.  This should theoretically yield better results.  I also plan to change some of the parameters I use.  I.E.: hidden layer size, number of hidden layers, weighting of random word selection.  Experimenting with different network parameters could also greatly improve performance.
 
