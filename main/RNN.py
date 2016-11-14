@@ -87,7 +87,7 @@ class RNN:
             if (epoch % evaluate_loss_after == 0):
                 loss = self.calculate_loss(X_train, y_train)
                 losses.append((self.num_examples_seen, loss))
-                print("Loss after %d examples.  epoch=%d: %f" % (self.num_examples_seen, epoch, loss) )
+                print("Loss after %d examples: %f" % (self.num_examples_seen, loss) )
                 if self.fname is not None:
                     self.save(self.fname)
                 # Adjust the learning rate if loss increases
