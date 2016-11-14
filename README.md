@@ -101,7 +101,7 @@ After implementing my vanilla recurrent neural network, I trained it for one hou
 When training the network, we typically get an initial starting error rate of 7.8~.  This is because the error rate of randomly selecting words is approximately 7.8 using the loss function we defined above.  After training for 15 minutes, I consistently got an error rate of approximately 6.1.
 </br>
 Here is a screenshot of the training convergence:
-<p align='center'><img src="img/training_sample.png" height=100 alt="training sample"/></p>
+<p align='center'><img src="img/training_sample.png" height=70 alt="training sample"/></p>
 
 In the following period of time, the network quickly converges to a loss average of 5.  This is a point of convergence and while further training helps, the benefit is marginal.  This suggests that our recurrent neural network model is pretty poor at modeling the lyrics of the Grateful Dead.  
 
