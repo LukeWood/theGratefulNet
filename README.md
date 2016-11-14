@@ -98,15 +98,17 @@ After implementing my vanilla recurrent neural network, I trained it for one hou
 3.)  Having a noun selected recently makes it much more likely to show up again in the near future.  This is good!  We see repetition of nouns in the original songs a great deal.  
 
 # Analysis
-When training the network, we typically get an initial starting error rate of 7.8~.  This is because the error rate of randomly selecting words is approximately 7.8 using the loss function we defined above.  After training for 15 minutes, I consistently got an error rate of approximately 6.1.
+When training the network, we typically get an initial starting error rate of 7.8~.  This is because the error rate of randomly selecting words is approximately 7.8 using the loss function we defined above.  After training for 15 minutes, I consistently got an error rate of approximately 6.1.  In the following period of time, the network quickly converges to a loss average of 5.  This is a point of convergence and while further training helps, the benefit is marginal.
+
 </br>
 Here is a screenshot of the training convergence:
 <p align='center'><img src="img/training_sample.png" height=70 alt="training sample"/></p>
+<p align='center'>Notice how quickly the rate of improvement goes down</p>
 
-In the following period of time, the network quickly converges to a loss average of 5.  This is a point of convergence and while further training helps, the benefit is marginal.  This suggests that our recurrent neural network model is pretty poor at modeling the lyrics of the Grateful Dead.  
+This immediate drop in loss can likely be attributed to the networks effectiveness in determining adjective, noun, and verb placement.  With a final error rate of 5, which is only 37.5% decrease in error from randomness, it is clear that we need to re-evaluate our model's architecture.
 
 # Going Forwards
-In the near future, I will improve the GratefulNet by changing it to a Long Short Term Memory (LSTM) network.  These have consistently proven better at natural language production and analysis.  This should yield better results.  I also plan to change some of the parameters I use.  I.E.: hidden layer size, number of hidden layers, weighting of random word selection.
+Unfortunately, I have not yet had the time to overhaul the networks architecture.  In the near future, I will improve the GratefulNet by changing it to a Long Short Term Memory (LSTM) network.  These have consistently proven better at natural language production and analysis.  This should theoretically yield better results.  I also plan to change some of the parameters I use.  I.E.: hidden layer size, number of hidden layers, weighting of random word selection.  Experimenting with different network parameters could also greatly improve performance.
 
 # Samples From One Hour of Training
 [Samples of the results](https://lukewoodsmu.github.io/theGratefulNet)
