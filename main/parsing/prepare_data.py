@@ -2,6 +2,8 @@ import nltk
 import itertools
 import numpy as np
 
+# This data manager class was created based on a procedural method of data preparization found in a tutorial online for training neural networks.
+
 class data_manager:
     def __init__(self,vocab_size=8000):
         self.vocabulary_size = vocab_size
