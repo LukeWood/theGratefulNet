@@ -113,4 +113,4 @@ I do believe that the results from the vanilla recurrent neural network yields p
 Unfortunately, I have not yet had the time to overhaul the networks architecture.  In the near future, I will improve the GratefulNet by changing it to a Long Short Term Memory (LSTM) network.  These have consistently proven better at natural language production and analysis.  This should theoretically yield better results.  I also plan to change some of the parameters I use.  I.E.: hidden layer size, number of hidden layers, weighting of random word selection.  Experimenting with different network parameters could also greatly improve performance.
 
 # Samples From an Hour and a Half of Training
-[The Grateful Net](https://lukewoodsmu.github.io/theGratefulNet)
+[The Grateful Net](https://lukewood.xyz/theGratefulNet)
