@@ -3,7 +3,7 @@
 
 <p align="center"><img src="img/mascot1.jpg" alt="mascot" height=50/>A tribute to the Grateful Dead.<img src="img/mascot1.jpg" alt="mascot" height=50/></p>
 
-[Samples From an Hour and a Half of Training](https://lukewood.xyz/theGratefulNet)
+[Samples From an Hour and a Half of Training](https://lukewood.github.io/theGratefulNet)
 
 # Concept
 Recurrent Neural Networks are a class of machine learning models.  They are similar to a classic neural network, however they "remember" their previous states.  This is very useful when dealing with sequences, including but not limited to natural language.  We will be training out network model on music lyrics, and hopefully we will get some interesting music lyrics out.
